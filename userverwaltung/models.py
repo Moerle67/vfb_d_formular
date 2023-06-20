@@ -4,7 +4,7 @@ from django.urls import reverse
 # Create your models here.
 class Dozent(models.Model):
     name = models.CharField("Name", max_length=50)
-    beschreibung = models.TextField("Beschreibung")
+    beschreibung = models.TextField("Beschreibung", blank=True)
 
     class Meta:
         verbose_name = "Dozent"
