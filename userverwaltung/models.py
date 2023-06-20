@@ -1,3 +1,4 @@
+from django import forms
 from django.db import models
 from django.urls import reverse
 
@@ -19,12 +20,11 @@ class Dozent(models.Model):
 
 class Benutzer(models.Model):
     email = models.CharField("E-Mail", max_length=50, primary_key=True)
-    password = models.CharField("Passwort", max_length=250, pass)
+    password = models.CharField("Passwort", max_length=250)
     dozent = models.ManyToManyField(Dozent, verbose_name="Dozent")
     class Meta:
         verbose_name = "Benutzer"
         verbose_name_plural = "Benutzer"
-
     def __str__(self):
         return self.email
 
